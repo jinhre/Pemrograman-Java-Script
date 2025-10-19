@@ -57,6 +57,9 @@ const switchPlayer = function () {
   // Kode ini digunakan untuk memeriksa pemain aktif saat ini dan menggantinya ke pemain lainnya.
   activePlayer = activePlayer === 0 ? 1 : 0;
 
+  // Kode ini digunakan untuk menambahkan atau menghapus kelas CSS 'player-active'
+  // pada elemen HTML yang mewakili pemain.
+  // Kelas 'player-active' biasanya digunakan untuk menandai pemain yang sedang aktif.
   player0El.classList.toggle('player-active');
   player1El.classList.toggle('player-active');
 
@@ -102,6 +105,8 @@ btnPutar.addEventListener('click', function () {
 
       // kode berikut digunakan untuk menambahkan skor pada pemain saat ini.
       currentScore += dadu;
+
+        // kode berikut digunakan untuk memperbarui tampilan skor saat ini pada antarmuka pengguna (UI).
       document.getElementById(`current-${activePlayer}`).textContent =
         currentScore;
 
