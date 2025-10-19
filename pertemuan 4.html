@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script type="text/javascript">
+    /* --- Let dan Const --- */
+    //Java Script ES5 (versi lama)
+    var angka = 10;
+    alert(angka);
+
+    //ES6(versi baru)
+    let angka1 = 10;
+    alert(angka1);
+
+    //constanta
+    const angka2 = 20;
+    alert(angka2);
+
+    angka2 = 30;
+    alert(angka2);
+
+    const pi = 3.14;
+
+    luas = pi * r * r;
+
+    /* --- Arrow Function/Fungsi Panah --- */
+    //ES5
+    function hitung(angka1, angka2) {
+      var hasil = angka1 + angka2;
+      return hasil;
+    }
+
+    function hitung(angka1, angka2) {
+      return angka1 + angka2;
+    }
+
+    //ES6
+    const hitung = (angka1, angka2) => {
+      var hasil = angka1 + angka2;
+      return hasil;
+    };
+
+    const hitung = (angka1, angka2) => angka1 + angka2;
+
+    //Template String
+    //ES5
+    var nama1 = "Budi";
+    var nama2 = "Santi";
+    var alamat = "A Yani 1";
+
+    var sapa =
+      "Halo " + nama1 + " dan " + nama2 + " alamat Anda ada di " + alamat;
+
+    //ES6
+    let nama1 = "Budi";
+    let nama2 = "Santi";
+    let alamat = "A Yani 1";
+
+    let sapa = `Halo ${nama1} dan ${nama2} alamat anda ada di ${alamat}`;
+  </script>
+</html>

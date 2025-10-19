@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script type="text/javascript">
+    //JavaScript ES6 (ECMAScript 6/ECMAScript 2015)
+    //ES5 - tanpa default parameter
+    //function tampilPesan(nama) {
+    //alert("halo apa kabar " + nama);
+    //}
+    //tampilPesan("Rizki");
+    //tampilPesan(); //undefined
+
+    //ES6 - dengan default parameter
+    const tampilPesan2 = (nama = "Pengunjung") => {
+      alert("halo apa kabar " + nama);
+    };
+    tampilPesan2("Edo");
+    tampilPesan2(); //undefined
+
+    const tampilDataMahasiswa = (
+      nama = "Mahasiswa",
+      jurusan = "Teknik Informatika"
+    ) => {
+      alert(`Nama : ${nama}, Jurusan : ${jurusan}`);
+    };
+    tampilDataMahasiswa("Rizki", "Sistem Informasi");
+    tampilDataMahasiswa("Edo"); //jurusan default
+    tampilDataMahasiswa(); //nama & jurusan default
+  </script>
+</html>

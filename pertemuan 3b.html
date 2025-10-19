@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling</title>
+  </head>
+  <body>
+    <button id="tombol">Tekan Saya</button>
+  </body>
+  <script type="text/javascript">
+    //Event Handling
+    var tombol = document.querySelector("#tombol");
+
+    tombol.addEventListener("click", function () {
+      alert("Tombol Ditekan");
+    });
+
+    tombol.addEventListener("mouseover", function () {
+      tombol.style.backgroundColor = "red";
+      tombol.style.color = "white";
+    });
+
+    tombol.addEventListener("mouseout", function () {
+      tombol.style.backgroundColor = "white";
+      tombol.style.color = "black";
+    });
+  </script>
+</html>

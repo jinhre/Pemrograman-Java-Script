@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="judul">Belajar DOM</h1>
+    <h2 id="keterangan">Belajar Document Object Model</h2>
+
+    <ul>
+      <li>Nasi Goreng</li>
+      <li>Mie Goreng</li>
+      <li>Ayam Goreng</li>
+      <li>Bakso</li>
+      <li>Sate</li>
+    </ul>
+
+    <ol>
+      <li class="belajar">Belajar PHP</li>
+      <li class="belajar">Belajar MySQL</li>
+      <li class="belajar">Belajar Laravel</li>
+      <li class="belajar">Belajar JavaScript</li>
+      <li class="belajar">Belajar ReactJS</li>
+    </ol>
+  </body>
+  <script type="text/javascript">
+    //DOM
+    /*
+    1. getElementById()
+    2. getElementsByTagName()
+    3. getElementsByClassName()
+    4. querySelector()
+    5. querySelectorAll()
+    */
+    var judul = document.getElementById("judul");
+    judul.innerText = "Tulisan saya Ganti";
+    judul.style.color = "white";
+    judul.style.fontFamily = "Arial";
+    judul.style.backgroundColor = "black";
+
+    var makanan = document.getElementsByTagName("li");
+    /*
+       h1 {
+         color: red;
+         background-color: black;
+         font-family: Arial;
+       }
+    */
+
+    makanan[0].style.color = "red";
+    makanan[1].style.backgroundColor = "orange";
+    makanan[2].innerText = "Ayam Bakar";
+
+    var belajar = document.getElementsByClassName("belajar");
+    belajar[0].style.color = "blue";
+
+    var coba1 = document.querySelector("li"); // cuma bisa 1 elemen
+    var coba2 = document.querySelectorAll("");
+  </script>
+</html>
