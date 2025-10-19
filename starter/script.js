@@ -1,9 +1,12 @@
 'use strict';
 
 // Deklarasi Elemen-elemen yang digunakan
-const player0El = document.querySelector('.player-0');
+// Baris ini mengambil elemen-elemen DOM yang digunakan: 
+// area pemain, elemen skor total, skor sementara (current), gambar dadu, tombol (baru/putar/tahan),
+// dan elemen untuk menampilkan teks giliran (giliran-main).
+const player0El = document.querySelector('.player-0'); // querySelector digunakan untuk seleksi berbasis CSS
 const player1El = document.querySelector('.player-1');
-const score0El = document.getElementById('score-0');
+const score0El = document.getElementById('score-0'); // getElementById digunakan untuk seleksi berdasarkan ID
 const score1El = document.getElementById('score-1');
 const current0El = document.getElementById('current-0');
 const current1El = document.getElementById('current-1');
@@ -16,7 +19,8 @@ const giliranInput = document.querySelector('.giliran-main');
 // Variabel game
 // score digunakan untuk menyimpan skor total kedua pemain
 // currentScore menyimpan skor sementara pemain saat ini
-
+// activePlayer menyimpan indeks pemain aktif (0 atau 1)
+// playing adalah boolean; true saat permainan berjalan, false setelah ada pemenang. Digunakan untuk menonaktifkan tombol saat permainan selesai.
 let scores, currentScore, activePlayer, playing;
 
 // Fungsi inisialisasi game baru
@@ -27,19 +31,25 @@ const init = function () {
   activePlayer = 0;
   playing = true;
 
+// score0El dan score1El diatur ke 0
+// current0El dan current1El diatur ke 0  
   score0El.textContent = 0;
   score1El.textContent = 0;
   current0El.textContent = 0;
   current1El.textContent = 0;
 
-  diceEl.classList.add('hidden');
+// diceEl untuk menyembunyikan gambar dadu saat permainan dimulai 
   diceEl.style.display = 'none';
 
+// Kode tersebut: menandai pemain 0 sebagai aktif, dan menghapus status aktif/pemenang dari pemain 1 dan status pemenang dari pemain 0.
+// Tujuannya: men-setup UI pada kondisi awal (game baru) sehingga hanya pemain 0 yang terlihat aktif dan tidak ada pemenang yang ditampilkan.
+// Agar salah satu dari player aktif dan pemenang tidak tumpang tindih / tidak jalan bersamaan di tampilan.
   player0El.classList.add('player-active');
   player1El.classList.remove('player-active');
   player0El.classList.remove('player-winner');
   player1El.classList.remove('player-winner');
 
+// Giliran input agar tahu siapa yang bermain
   giliranInput.value = 'Giliran: Pemain 1';
 };
 
