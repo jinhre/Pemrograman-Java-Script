@@ -1,6 +1,6 @@
 'use strict';
 
-// Elemen-elemen HTML
+// Deklarasi Elemen-elemen yang digunakan
 const player0El = document.querySelector('.player-0');
 const player1El = document.querySelector('.player-1');
 const score0El = document.getElementById('score-0');
@@ -14,9 +14,13 @@ const btnTahan = document.getElementById('btn-tahan');
 const giliranInput = document.querySelector('.giliran-main');
 
 // Variabel game
+// score digunakan untuk menyimpan skor total kedua pemain
+// currentScore menyimpan skor sementara pemain saat ini
+
 let scores, currentScore, activePlayer, playing;
 
 // Fungsi inisialisasi game baru
+// Dikerjakan oleh ...
 const init = function () {
   scores = [0, 0];
   currentScore = 0;
@@ -40,6 +44,7 @@ const init = function () {
 };
 
 // Fungsi ganti pemain
+// Dikerjakan oleh Dayat
 const switchPlayer = function () {
   document.getElementById(`current-${activePlayer}`).textContent = 0;
   currentScore = 0;
@@ -50,18 +55,24 @@ const switchPlayer = function () {
 };
 
 // Saat tombol PUTAR ditekan
+// Dikerjakan oleh Muhammad Fauji
 btnPutar.addEventListener('click', function () {
   if (playing) {
+    // Variabel 'dadu' digunakan untuk menyimpan nilai dadu saat ini.
+
     // 1. Buat angka acak 1–6
-    const dice = Math.trunc(Math.random() * 6) + 1;
+    const dadu = Math.trunc(Math.random() * 6) + 1;
 
     // 2. Tampilkan gambar dadu
     diceEl.style.display = 'block';
-    diceEl.src = `./images/dadu-${dice}.png`;
+    // Sesuai dengan nilai dadu dari variabel 'dadu'
+    diceEl.src = `./images/dadu-${dadu}.png`;
 
     // 3. Jika bukan 1, tambahkan ke skor saat ini
-    if (dice !== 1) {
-      currentScore += dice;
+    if (dadu !== 1) {
+      // kode berikut digunakan untuk menambahkan skor pada pemain saat ini.
+      currentScore += dadu;
+
       document.getElementById(`current-${activePlayer}`).textContent =
         currentScore;
     } else {
@@ -72,6 +83,7 @@ btnPutar.addEventListener('click', function () {
 });
 
 // Saat tombol TAHAN ditekan
+// Dikerjakan oleh Muhammad Fauji
 btnTahan.addEventListener('click', function () {
   if (playing) {
     // 1. Tambahkan skor saat ini ke total skor
@@ -98,7 +110,9 @@ btnTahan.addEventListener('click', function () {
 });
 
 // Saat tombol GAME BARU ditekan
+// Dikerjakan oleh Muhammad Fauji
 btnBaru.addEventListener('click', init);
 
 // Jalankan pertama kali
+// Dikerjakan oleh Muhammad Fauji
 init();
